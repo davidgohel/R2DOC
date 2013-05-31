@@ -1,0 +1,10 @@
+import("rJava")
+exportClasses("textProperties","parProperties","cellProperties","tableProperties")
+exportMethods("as.character")
+export("addHeader", "addParagraph", "addPlot", "addTable", "writeDoc"
+, "addTable.check.arg", "bootstrap.copy", "correct.data.types"
+, "get.default.formats", "get.light.formats", "text2html"
+, "get.random.id", "indent", "is.color"
+, "integer.format", "percent.format", "character.format", "double.format"
+, "textProperties","parProperties","cellProperties","tableProperties")
+
