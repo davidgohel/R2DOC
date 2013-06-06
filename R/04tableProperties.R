@@ -218,8 +218,32 @@ tableProperties = function(
 		, integer.digit = 2L
 		, fraction.double.digit = 2L
 		, fraction.percent.digit = 2L
+		, data.cell, data.par, data.text
 		){
 	.Object = new("tableProperties")
+	
+	if( !missing( data.cell ) ){
+		if( class( data.cell ) == "cellProperties" ) {
+			double.cell = integer.cell = percent.cell = character.cell = date.cell = datetime.cell = data.cell
+		} else {
+			stop("data.cell must be a cellProperties object.")
+		}
+	}
+	if( !missing( data.par ) ){
+		if( class( data.par ) == "parProperties" ) {
+			double.par = integer.par = percent.par = character.par = date.par = datetime.par = data.par
+		} else {
+			stop("data.par must be a parProperties object.")
+		}
+	}
+	if( !missing( data.text ) ){
+		if( class( data.text ) == "textProperties" ) {
+			double.text = integer.text = percent.text = character.text = date.text = datetime.text = data.text
+		} else {
+			stop("data.text must be a textProperties object.")
+		}
+	}
+	
 	
 	.Object@header.text = header.text
 	.Object@header.par = header.par

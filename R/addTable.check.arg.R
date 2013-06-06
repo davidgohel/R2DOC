@@ -5,7 +5,7 @@
 # Version: 0.1
 ###############################################################################
 addTable.check.arg = function( data
-	, formats, header.labels, grouped.cols = list(), span.first.columns = 0
+	, formats, header.labels, grouped.cols = list(), span.columns = character(0)
 	, col.types, col.colors, col.fontcolors, extra.type ) {
 
 	known.types = c("character", "double", "integer", "percent", "date", "datetime")
@@ -38,19 +38,21 @@ addTable.check.arg = function( data
 	}	
 	
 	#### check span.first.columns
-	if( !is.numeric( span.first.columns ) ){
-		stop("span.first.columns must be an integer.")
-	} else span.first.columns = as.integer( span.first.columns )
-	if( span.first.columns > ncol( data ) ){
-		stop("span.first.columns must be less than the number of data columns.")
+	if( !is.character( span.columns ) ){
+		stop("span.first.columns must be a character vector.")
+	} 
+	.ie.span.columns = is.element( span.columns , names( data ) )
+	if( !all ( .ie.span.columns ) ){
+		stop("span.columns contains unknown columns names :", paste( span.columns[!.ie.span.columns], collapse = "," ) )
 	}
-	if( nrow( data ) < 2 ) span.first.columns = 0L
+	if( nrow( data ) < 2 ) span.first.columns = character(0)
 
 	if( missing( col.types ) ){
 		col.types = lapply( data , function(x) {
 					out = class(x)
 					if( out == "factor") out = "character"
 					if( out == "numeric") out = "double"
+					if( out == "logical") out = "character"# TODO: need improvments for that data type 
 					if( out == "Date") out = "date"
 					if( out == "POSIXct") out = "datetime"
 					if( out == "POSIXlt") out = "datetime"
@@ -122,7 +124,7 @@ addTable.check.arg = function( data
 		, formats = formats
 		, header.labels = header.labels
 		, grouped.cols = grouped.cols
-		, span.first.columns = span.first.columns
+		, span.columns = span.columns
 		, col.types = col.types
 		, col.colors = col.colors
 		, col.fontcolors = col.fontcolors 

@@ -94,7 +94,7 @@ cellProperties = function( border.bottom.color = "black"
 		, border.left.style = "solid", border.left.width = 1, border.top.color = "black"
 		, border.top.style = "solid", border.top.width = 1, border.right.color = "black"
 		, border.right.style = "solid", border.right.width = 1, vertical.align = "middle"
-		, padding.bottom = 1, padding.top = 1, padding.left = 1, padding.right = 1
+		, padding.bottom = 2, padding.top = 2, padding.left = 3, padding.right = 3
 		, padding, border.width, border.style, border.color
 		){
 	

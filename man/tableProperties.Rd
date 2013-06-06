@@ -15,7 +15,7 @@ tableProperties( header.text = textProperties(font.weight="bold"), header.par = 
 , character.text = textProperties(), character.par = parProperties( text.align = "left" ), character.cell = cellProperties()
 , date.text = textProperties(font.style="italic"), date.par = parProperties( text.align = "center" ), date.cell = cellProperties()
 , datetime.text = textProperties(font.style="italic"), datetime.par = parProperties( text.align = "center" ), datetime.cell = cellProperties()
-, percent.addsymbol = "\%", integer.digit = 2L, fraction.double.digit = 2L, fraction.percent.digit = 2L
+, percent.addsymbol = "\%", integer.digit = 2L, fraction.double.digit = 2L, fraction.percent.digit = 2L, data.cell, data.par, data.text
 )}
 
 \arguments{
@@ -47,6 +47,11 @@ tableProperties( header.text = textProperties(font.weight="bold"), header.par = 
 		\item{integer.digit}{the minimum number of digits (to the left of the decimal point for data 'percent' and 'double') in formatting numerical data. Allowed values are integer.digit >=0.}
 		\item{fraction.double.digit}{the minimum number of digits to the right of the decimal point in formatting 'double' data. Allowed values are fraction.double.digit >=0.}
 		\item{fraction.percent.digit}{the minimum number of digits to the right of the decimal point in formatting 'percent' data. Allowed values are fraction.percent.digit >=0.}
+
+		\item{data.cell}{Object from the class \code{cellProperties} that represents cell formatting properties for columns of any type.}
+		\item{data.par}{Object from the class \code{parProperties} that represents paragraph formatting properties for columns of any type.}
+		\item{data.text}{Object from the class \code{textProperties} that represents text formatting properties for columns of any type.}
+
 }
 
 \seealso{
@@ -60,18 +65,17 @@ tableProperties(header.text = textProperties(font.weight="bold")
 	, header.par = parProperties( text.align = "center" ))
 	
 	
-# creation of a 
+# creation of another tableProperties
 header.cellProperties = cellProperties( border.left.width = 0, border.right.width = 0
-		, border.bottom.width = 2, border.top.width = 0
-		, padding = 2 )
+		, border.bottom.width = 1, border.top.width = 0
+		, padding = 3 )
 data.cellProperties = cellProperties( border.left.width = 0, border.right.width = 0
 		, border.bottom.width = 1, border.top.width = 0
-		, padding = 1 )
+		, padding = 2 )
 		
-header.textProperties = textProperties( font.size = 10
-	, font.weight = "bold" )
+header.textProperties = textProperties( font.size = 10, font.weight = "bold" )
 data.textProperties = textProperties( font.size = 10 )
-	
+
 leftPar = parProperties( text.align = "left", padding.left = 4, padding.right = 4)
 rightPar = parProperties( text.align = "right", padding.left = 4, padding.right = 4)
 centerPar = parProperties( text.align = "center", padding.left = 4, padding.right = 4)
@@ -87,14 +91,8 @@ my.formats = tableProperties(
 			, header.cell = header.cellProperties
 			, header.par = centerPar
 			, header.text = header.textProperties
-			, double.cell = data.cellProperties
-			, integer.cell = data.cellProperties
-			, percent.cell = data.cellProperties
-			, character.cell = data.cellProperties
-			, character.text = data.textProperties
-			, double.text = data.textProperties
-			, percent.text = data.textProperties
-			, integer.text = data.textProperties
+			, data.cell = data.cellProperties
+			, data.text = data.textProperties
 )
 
 

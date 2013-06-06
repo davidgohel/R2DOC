@@ -19,3 +19,6 @@ if(!isGeneric("addHeader"))
 if(!isGeneric("writeDoc"))
 	setGeneric("writeDoc", function(x, ...) standardGeneric("writeDoc"));
 
+#if(!isGeneric("addStyle"))
+#	setGeneric("addStyle", function(x, ...) standardGeneric("addStyle"));
+

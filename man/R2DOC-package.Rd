@@ -8,14 +8,15 @@ Base package for R2'documents'
 \description{
 Base package for R2'documents' packages\cr
 The package contains 'format' functions (\code{\link{tableProperties}}
-, \code{\link{textProperties}}, \code{\link{parProperties}}, \code{\link{cellProperties}}).
+, \code{\link{textProperties}}, \code{\link{parProperties}}, \code{\link{cellProperties}}) 
+and tool functions for reporting.
 }
 
 \details{
 \tabular{ll}{
 Package: \tab R2DOC\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
+Version: \tab 0.3\cr
 Date: \tab 2013-05-03\cr
 License: \tab GPL-3\cr
 Depends: \tab rJava, methods\cr
