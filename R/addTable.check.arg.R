@@ -46,10 +46,10 @@ addTable.check.arg = function( data
 		stop("span.columns contains unknown columns names :", paste( span.columns[!.ie.span.columns], collapse = "," ) )
 	}	
 	if( nrow( data ) < 2 ) span.columns = character(0)
-	else if ( length( span.columns ) > 0 ){
-		valid.span.cols = sapply( data[, span.columns, drop = F ], function( x ) all( x[-1]==x[-length( x ) ] ) )
-		span.columns = span.columns[valid.span.cols]
-	}
+#	else if ( length( span.columns ) > 0 ){
+#		valid.span.cols = sapply( data[, span.columns, drop = F ], function( x ) all( x[-1]==x[-length( x ) ] ) )
+#		span.columns = span.columns[valid.span.cols]
+#	}
 	
 	if( missing( col.types ) ){
 		col.types = lapply( data , function(x) {
