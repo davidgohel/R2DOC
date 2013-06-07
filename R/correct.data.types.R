@@ -26,6 +26,9 @@ correct.data.types = function( data, col.types ){
 		if( col.types[[ data.names[j] ]] == "double" ){
 			data[, j] = as.double( data[, j] )
 		}
+		if( col.types[[ data.names[j] ]] == "character" && is.logical(data[, j]) ){
+			data[, j] = ifelse( data[, j], "true", "false")
+		}
 		
 		
 	}
