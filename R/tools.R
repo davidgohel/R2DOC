@@ -12,35 +12,7 @@
 
 get.default.formats = function(){
 
-#	header.cellProperties = cellProperties(padding = 3, border.width = 2)
-#	default.headerTextProperties = new ("textProperties", "font-size" = "10px", "font-weight" = "bold" )
-#	
-#	default.cellProperties = cellProperties(padding = 2, border.width = 1)
-#	default.textProperties = new ("textProperties", "font-size" = "10px" )
-#	
-#	leftPar = new ("parProperties", "text-align" = "left", "padding-left" = "4px", "padding-right" = "4px")
-#	rightPar = new ("parProperties", "text-align" = "right", "padding-left" = "4px", "padding-right" = "4px")
-#	centerPar = new ("parProperties", "text-align" = "center", "padding-left" = "4px", "padding-right" = "4px")
-#	
-#	table.formats = tableProperties(character.par = leftPar
-#			, percent.par = rightPar
-#			, double.par = rightPar
-#			, integer.par = rightPar
-#			, groupedheader.par = centerPar
-#			, groupedheader.text = default.headerTextProperties
-#			, groupedheader.cell = header.cellProperties
-#			, header.cell = header.cellProperties
-#			, header.par = centerPar
-#			, header.text = default.headerTextProperties
-#			, double.cell = default.cellProperties
-#			, integer.cell = default.cellProperties
-#			, percent.cell = default.cellProperties
-#			, character.cell = default.cellProperties
-#			, character.text = default.textProperties
-#			, double.text = default.textProperties
-#			, percent.text = default.textProperties
-#			, integer.text = default.textProperties
-#		)
+
 	header.cellProperties = cellProperties( border.width = 1, padding = 3 )
 	header.textProperties = textProperties( font.size = 10, font.weight = "bold" )
 	
@@ -58,24 +30,14 @@ get.default.formats = function(){
 			, header.cell = header.cellProperties
 			, header.par = centerPar
 			, header.text = header.textProperties
-			, double.cell = data.cellProperties
+			, data.cell = data.cellProperties
+			, data.text = data.textProperties
 			, double.par = rightPar
-			, double.text = data.textProperties
-			, integer.cell = data.cellProperties
 			, integer.par = rightPar
-			, integer.text = data.textProperties
-			, character.cell = data.cellProperties
 			, character.par = leftPar
-			, character.text = data.textProperties
-			, percent.cell = data.cellProperties
 			, percent.par = rightPar
-			, percent.text = data.textProperties
-			, date.cell = data.cellProperties
 			, date.par = centerPar 
-			, date.text = data.textProperties
-			, datetime.cell = data.cellProperties
 			, datetime.par = centerPar 
-			, datetime.text = data.textProperties
 	)
 	
 
@@ -102,24 +64,14 @@ get.light.formats = function(){
 			, header.cell = header.cellProperties
 			, header.par = centerPar
 			, header.text = header.textProperties
-			, double.cell = data.cellProperties
+			, data.cell = data.cellProperties
+			, data.text = data.textProperties
 			, double.par = rightPar
-			, double.text = data.textProperties
-			, integer.cell = data.cellProperties
 			, integer.par = rightPar
-			, integer.text = data.textProperties
-			, character.cell = data.cellProperties
 			, character.par = leftPar
-			, character.text = data.textProperties
-			, percent.cell = data.cellProperties
 			, percent.par = rightPar
-			, percent.text = data.textProperties
-			, date.cell = data.cellProperties
 			, date.par = centerPar 
-			, date.text = data.textProperties
-			, datetime.cell = data.cellProperties
 			, datetime.par = centerPar 
-			, datetime.text = data.textProperties
 	)
 	
 	
