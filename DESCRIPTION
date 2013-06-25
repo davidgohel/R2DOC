@@ -1,7 +1,7 @@
 Package: R2DOC
 Type: Package
 Title: RDocument Tools
-Version: 0.3
+Version: 0.4
 Date: 2013-05-03
 Author: David Gohel <david.gohel@gmail.com>
 Maintainer: David Gohel <david.gohel@gmail.com>

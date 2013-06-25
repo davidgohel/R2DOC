@@ -18,5 +18,6 @@ double.format = function(value, integer.digit = 2, fraction.digit = 2) {
 	paste( "<div class=\"double\">", sprintf(.format, value), "</div>" ,sep = "" )
 }
 character.format = function(value) {
+	value[ is.na( value ) ] = ""
 	sapply( value, text2html )
 }
