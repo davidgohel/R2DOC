@@ -86,29 +86,6 @@ setMethod("initialize", "tableProperties", function(.Object, ... ) {
 	.Object@fraction.double.digit = 2L
 	.Object@fraction.percent.digit = 2L
 
-#			styles.regmatches = regexpr( "(header|groupedheader|double|integer|percent|character|date|time|datetime)\\.(text|par|cell)", names( args ) ) > 0
-#			if( any( styles.regmatches ) ){
-#				for( i in names(args) ){
-#					str = paste( ".Object@", i, "=args[[i]]", sep = "" )
-#					eval( parse ( text = str ) )
-#				}
-#			}
-#			
-#			styles.regmatches = regexpr( "(date|time|datetime)\\.pattern", names( args ) ) > 0
-#			if( any( styles.regmatches ) ){
-#				for( i in names(args) ){
-#					str = paste( ".Object@", i, "=args[[i]]", sep = "" )
-#					eval( parse ( text = str ) )
-#				}
-#			}
-#			
-#			styles.regmatches = regexpr( "\\.digit$", names( args ) ) > 0
-#			if( any( styles.regmatches ) ){
-#				for( i in names(args) ){
-#					str = paste( ".Object@", i, "=args[[i]]", sep = "" )
-#					eval( parse ( text = str ) )
-#				}
-#			}
 			
 	.Object
 })

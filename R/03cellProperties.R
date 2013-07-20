@@ -30,7 +30,8 @@ setMethod("initialize", "cellProperties", function(.Object, ... ) {
 			, "padding-top" = "1px"
 			, "padding-left" = "1px"
 			, "padding-right" = "1px"
-		)
+			, "background-color" = "white"
+	)
 	
 	# styles checking
 	styles.regmatches = regexpr( "border\\-(bottom|top|left|right)\\-style", names( args ) )
@@ -54,7 +55,14 @@ setMethod("initialize", "cellProperties", function(.Object, ... ) {
 		if( !all( xx ) ) stop("Border colors must be valid colors." )
 	}
 	template[ names( args )[colors.regmatches>0] ] = args [colors.regmatches>0]
-	
+
+	# background-color checking
+	if( is.element("background-color", names(args) ) ){
+		if( !is.color( args [["background-color"]] ) )
+			stop("background-color must be a valid color." )
+		template[["background-color"]] = args [["background-color"]]
+	}
+
 	if( any( names( args ) == "vertical-align" ) ){
 		match.arg( args [["vertical-align"]], choices = vertical.align, several.ok = F )
 	}
@@ -95,6 +103,7 @@ cellProperties = function( border.bottom.color = "black"
 		, border.top.style = "solid", border.top.width = 1, border.right.color = "black"
 		, border.right.style = "solid", border.right.width = 1, vertical.align = "middle"
 		, padding.bottom = 2, padding.top = 2, padding.left = 3, padding.right = 3
+		, background.color = "#FFFFFF"
 		, padding, border.width, border.style, border.color
 		){
 	
@@ -132,6 +141,9 @@ cellProperties = function( border.bottom.color = "black"
 			stop("padding must be a integer value ( >=0 ).")
 		}
 	}
+	if( !is.color( background.color ) )
+		stop("background.color must be a valid color." )
+
 	
 	
 	if( is.numeric( border.bottom.width ) ) {
@@ -194,6 +206,7 @@ cellProperties = function( border.bottom.color = "black"
 			, "padding-top" = padding.top
 			, "padding-left" = padding.left
 			, "padding-right" = padding.right
+			, "background-color" = background.color
 		)
 }
 
