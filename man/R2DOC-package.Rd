@@ -16,7 +16,7 @@ and tool functions for reporting.
 \tabular{ll}{
 Package: \tab R2DOC\cr
 Type: \tab Package\cr
-Version: \tab 0.3\cr
+Version: \tab 0.6\cr
 Date: \tab 2013-05-03\cr
 License: \tab GPL-3\cr
 Depends: \tab rJava, methods\cr

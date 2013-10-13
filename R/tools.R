@@ -5,8 +5,14 @@
 # Version: 0.1
 ###############################################################################
 .onLoad= function(libname, pkgname){
-	
+	if( Sys.info()[["sysname"]] == "Darwin" )
+		Sys.setenv(NOAWT=1)
 	.jpackage( pkgname, lib.loc = libname )
+	.jv = .jcall("java/lang/System","S","getProperty","java.version")
+	
+	if( !is.element( substring( .jv, 1, 4), c( "1.6.", "1.7." ) ) )
+		stop("R2DOC does not support java version ", .jv, ". Expected version is 1.6 or 1.7")
+	
 	invisible()
 }
 

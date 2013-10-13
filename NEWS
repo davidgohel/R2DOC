@@ -1,0 +1,6 @@
+R2DOC 0.6
+----------------------------------------------------------------
+
+MINOR FEATURES
+
+* onLoad now check the java version and run Sys.setenv(NOAWT=1) when os is MAC OS
